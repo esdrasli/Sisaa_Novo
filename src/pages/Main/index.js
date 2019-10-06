@@ -23,6 +23,9 @@ export default class App extends React.Component<Props> {
       senha: "123456"
     };
   }
+  static navigationOptions = {
+    title: 'Entre com e-mail e senha para Login'
+  };
 
   render() {
     const {navigate} = this.props.navigation;
@@ -43,7 +46,7 @@ export default class App extends React.Component<Props> {
           secureTextEntry
           //value={this.state.senha}
         />
-        <TouchableOpacity style={styles.loginButton}>
+        <TouchableOpacity style={styles.loginButton} onPress={()=>this.props.navigation.navigate('menu')}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.forgotButton} >
